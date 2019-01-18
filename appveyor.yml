@@ -110,6 +110,7 @@ build_script:
   - dir c:\projects\oiio\build
   - dir c:\projects\oiio\build\windows64
   - cmake --build . --config %CONFIGURATION%
+  - dir /s /b c:\projects\oiio\build\
 
 
 matrix:
