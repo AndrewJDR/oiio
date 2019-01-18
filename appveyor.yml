@@ -110,6 +110,7 @@ build_script:
   - dir c:\projects\oiio\build
   - dir c:\projects\oiio\build\windows64
   - cmake --build . --config %CONFIGURATION%
+  # Let's try one more time, maybe prior caching will allow the Qt part to finish...
   - dir /s /b c:\projects\oiio\build\
 
 
