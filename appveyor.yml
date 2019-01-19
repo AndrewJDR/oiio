@@ -120,6 +120,14 @@ build_script:
   - robocopy c:\projects\oiio\build\windows64\src\oiiotool\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
   - robocopy c:\projects\oiio\build\windows64\src\libOpenImageIO\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
 # - robocopy c:\projects\oiio\build\windows64\src\testtex\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - md c:\projects\oiio\build\oiio-bins\platforms
+  - copy /y C:\Tools\vcpkg\installed\x64-windows\plugins\platforms\qwindows.dll c:\projects\oiio\build\oiio-bins\platforms
+  - copy /y C:\Libraries\boost_1_63_0\lib64-msvc-14.0\boost_filesystem-vc140-mt-1_63.dll c:\projects\oiio\build\oiio-bins
+  - copy /y C:\Libraries\boost_1_63_0\lib64-msvc-14.0\boost_system-vc140-mt-1_63.dll c:\projects\oiio\build\oiio-bins
+  - copy /y C:\Libraries\boost_1_63_0\lib64-msvc-14.0\boost_thread-vc140-mt-1_63.dll c:\projects\oiio\build\oiio-bins
+  - copy /y C:\Libraries\boost_1_63_0\lib64-msvc-14.0\boost_chrono-vc140-mt-1_63.dll c:\projects\oiio\build\oiio-bins
+  - copy /y C:\Libraries\boost_1_63_0\lib64-msvc-14.0\boost_date_time-vc140-mt-1_63.dll c:\projects\oiio\build\oiio-bins
+  - copy /y C:\Libraries\boost_1_63_0\lib64-msvc-14.0\boost_atomic-vc140-mt-1_63.dll c:\projects\oiio\build\oiio-bins
   - cd c:\projects\oiio\build\oiio-bins
   - 7z a -r C:\projects\oiio\oiio-bins.zip .
 # - dir /s /b c:\projects\oiio\build\
