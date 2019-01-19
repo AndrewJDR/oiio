@@ -118,6 +118,7 @@ build_script:
   - robocopy c:\projects\oiio\build\windows64\src\iv\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
   - robocopy c:\projects\oiio\build\windows64\src\maketx\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
   - robocopy c:\projects\oiio\build\windows64\src\oiiotool\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - robocopy c:\projects\oiio\build\windows64\src\libOpenImageIO\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
 # - robocopy c:\projects\oiio\build\windows64\src\testtex\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
   - cd c:\projects\oiio\build\oiio-bins
   - 7z a -r C:\projects\oiio\oiio-bins.zip .
