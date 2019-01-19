@@ -105,20 +105,20 @@ build_script:
   - mkdir build\windows64
   - cd build\windows64
   - cmake -G "%CMAKE_PLATFORM%" -DCMAKE_TOOLCHAIN_FILE=c:/tools/vcpkg/scripts/buildsystems/vcpkg.cmake \
-      -DPYTHON_INCLUDE_DIR:PATH=%PYTHON_DIR%/include -DPYTHON_LIBRARY:FILEPATH=%PYTHON_DIR%/libs/python27.lib -DPYTHON_EXECUTABLE:FILEPATH=%PYTHON_DIR%/python.exe -DCMAKE_LIBRARY_PATH=%CMAKE_LIBRARY_PATH% -DCMAKE_INCLUDE_PATH=%CMAKE_INCLUDE_PATH%  -DCMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH% -DOPENEXR_ROOT_DIR=C:\projects\oiio\ext -DVERBOSE=1 -DBUILD_MISSING_DEPS=1 ../..
+      -DPYTHON_INCLUDE_DIR:PATH=%PYTHON_DIR%/include -DPYTHON_LIBRARY:FILEPATH=%PYTHON_DIR%/libs/python27.lib -DPYTHON_EXECUTABLE:FILEPATH=%PYTHON_DIR%/python.exe -DCMAKE_LIBRARY_PATH=%CMAKE_LIBRARY_PATH% -DCMAKE_INCLUDE_PATH=%CMAKE_INCLUDE_PATH%  -DCMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH% -DOPENEXR_ROOT_DIR=C:\projects\oiio\ext -DVERBOSE=1 -DBUILD_MISSING_DEPS=1 -DOIIO_BUILD_TESTS=0 ../..
   - dir c:\projects\oiio
   - dir c:\projects\oiio\build
   - dir c:\projects\oiio\build\windows64
   - cmake --build . --config %CONFIGURATION%
   - md c:\projects\oiio\build\oiio-bins
-  - robocopy c:\projects\oiio\build\windows64\src\iconvert\Release c:\projects\oiio\build\oiio-bins /copyall
-  - robocopy c:\projects\oiio\build\windows64\src\idiff\Release c:\projects\oiio\build\oiio-bins /copyall
-  - robocopy c:\projects\oiio\build\windows64\src\igrep\Release c:\projects\oiio\build\oiio-bins /copyall
-  - robocopy c:\projects\oiio\build\windows64\src\iinfo\Release c:\projects\oiio\build\oiio-bins /copyall
-  - robocopy c:\projects\oiio\build\windows64\src\iv\Release c:\projects\oiio\build\oiio-bins /copyall
-  - robocopy c:\projects\oiio\build\windows64\src\maketx\Release c:\projects\oiio\build\oiio-bins /copyall
-  - robocopy c:\projects\oiio\build\windows64\src\oiiotool\Release c:\projects\oiio\build\oiio-bins /copyall
-  - robocopy c:\projects\oiio\build\windows64\src\testtex\Release c:\projects\oiio\build\oiio-bins /copyall
+  - robocopy c:\projects\oiio\build\windows64\src\iconvert\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - robocopy c:\projects\oiio\build\windows64\src\idiff\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - robocopy c:\projects\oiio\build\windows64\src\igrep\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - robocopy c:\projects\oiio\build\windows64\src\iinfo\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - robocopy c:\projects\oiio\build\windows64\src\iv\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - robocopy c:\projects\oiio\build\windows64\src\maketx\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+  - robocopy c:\projects\oiio\build\windows64\src\oiiotool\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
+# - robocopy c:\projects\oiio\build\windows64\src\testtex\Release c:\projects\oiio\build\oiio-bins /copyall & exit 0
   - cd c:\projects\oiio\build\oiio-bins
   - 7z a -r C:\projects\oiio\oiio-bins.zip .
 # - dir /s /b c:\projects\oiio\build\
